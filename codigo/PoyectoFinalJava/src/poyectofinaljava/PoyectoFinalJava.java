@@ -54,6 +54,7 @@ public class PoyectoFinalJava {
                     System.out.println(crearFlickr());
                     break;
                 default:
+                    contador = contador - 1;
                     System.out.println("No es una opcion a seleccionar");
             }
             contador = contador + 1;
@@ -68,9 +69,9 @@ public class PoyectoFinalJava {
 
     public static String crearFacebook() {
         Scanner entrada = new Scanner(System.in);
+        int edad;
         String resumen;
         String nombre;
-        int edad;
         String pais;
         String ciudad;
         String correo;
@@ -95,9 +96,9 @@ public class PoyectoFinalJava {
 
     public static void crarTwitter() {
         Scanner entrada = new Scanner(System.in);
+        int edad;
         String nombre;
         String nombresCompletos;
-        int edad;
         String apellidos;
         String idioma;
         String pais;
@@ -131,10 +132,10 @@ public class PoyectoFinalJava {
 
     public static String crearWhatsapp() {
         Scanner entrada = new Scanner(System.in);
+        int edad;
+        int telefono;
         String resumen;
         String nombre;
-        int telefono;
-        int edad;
         String pais;
         String ciudad;
         System.out.println("<< Cuenta de Whatsapp >>");
@@ -158,8 +159,8 @@ public class PoyectoFinalJava {
 
     public static void crearTelegram() {
         Scanner entrada = new Scanner(System.in);
-        String nombre;
         int telefono;
+        String nombre;
         String pais;
         String ciudad;
         String interes;
@@ -183,9 +184,9 @@ public class PoyectoFinalJava {
 
     public static String crearSignal() {
         Scanner entrada = new Scanner(System.in);
+        int telefono;
         String resumen;
         String nombre;
-        int telefono;
         String pais;
         String ciudad;
         String hobby;
@@ -211,8 +212,8 @@ public class PoyectoFinalJava {
 
     public static void crearInstagram() {
         Scanner entrada = new Scanner(System.in);
-        String nombre;
         int edad;
+        String nombre;
         String ciudad;
         String correo;
         System.out.println("<< Cuenta de Instagram >>");
@@ -252,6 +253,9 @@ public class PoyectoFinalJava {
         String mensaje = "";
         String mensajeFinal[] = {"Campaña con poca afluencia",
             "Campaña moderada siga adelante", "Excelente campaña"};
+        if (cuentasCreadas == 0) {
+            mensaje = "campaña sin afluencia";
+        }
         if (cuentasCreadas >= 1 && cuentasCreadas <= 5) {
             mensaje = mensajeFinal[0];
         } else {
